@@ -1,331 +1,160 @@
-
 <!DOCTYPE html>
 <html lang="fa" dir="rtl">
 <head>
 <meta charset="UTF-8">
-<meta name="viewport" content="width=device-width, initial-scale=1">
-<meta name="theme-color" content="#00150d">
-<title>FAISAL MD | WhatsApp Bot</title>
-
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta name="theme-color" content="#050b09">
+<title>FAISAL MD — WhatsApp Automation</title>
 <style>
-*{box-sizing:border-box;margin:0;padding:0}
-
-:root{
- --green:#00ff66;
- --dark:#00140d;
- --panel:#061e15;
- --gold:#ffd700;
-}
-
-body{
- background:
- radial-gradient(ellipse at top,#063d24 0%,#00140d 55%,#000905 100%);
- color:white;
- font-family:Tahoma,Arial,sans-serif;
- text-align:center;
- overflow-x:hidden;
-}
-
-header{
- position:relative;
- padding:45px 15px 35px;
- background:linear-gradient(135deg,#001b11,#07532d,#00140c);
- border-bottom:3px solid var(--green);
- box-shadow:0 0 30px #00ff6640;
-}
-
-.flag{font-size:65px;filter:drop-shadow(0 0 12px #00ff66)}
-
-h1{
- font-size:clamp(38px,9vw,65px);
- direction:ltr;
- color:white;
- text-shadow:0 0 10px var(--green),0 0 30px #00ff66;
- margin:15px 0;
- letter-spacing:2px;
-}
-
-h1 span{color:var(--green)}
-.subtitle{font-size:17px;color:#c2e7d2;direction:ltr}
-.power{margin-top:20px;color:var(--gold);font-size:23px}
-
-.container{width:min(940px,94%);margin:auto}
-
-.panel{
- position:relative;
- margin:25px auto;
- padding:28px 22px;
- background:linear-gradient(145deg,#092b1e,#03160f);
- border:2px solid #00b957;
- border-radius:28px;
- box-shadow:0 0 18px #00ff6630,inset 0 0 25px #00ff660b;
-}
-
-.panel h2{
- color:var(--green);
- font-size:clamp(21px,5vw,30px);
- margin-bottom:25px;
-}
-
-.hero{
- margin-top:30px;
- padding:25px;
- border:2px solid var(--green);
- border-radius:30px;
- background:linear-gradient(135deg,#042a19,#00110b);
- box-shadow:0 0 30px #00ff6640;
-}
-
-.hero-icon{font-size:75px}
-.hero h2{color:var(--green);margin:15px}
-.hero p{color:#b9d7c8;line-height:2}
-
-.info{
- display:grid;
- grid-template-columns:repeat(2,1fr);
- gap:15px;
- margin-top:20px;
-}
-
-.info-card{
- padding:25px 12px;
- border:1px solid #168c57;
- border-radius:20px;
- background:#09261b;
-}
-
-.info-card .emoji{font-size:35px;margin-bottom:12px}
-.info-card h3{color:#00ff77;font-size:18px}
-.info-card p{color:#c4dacf;margin-top:8px;font-size:14px}
-
-select,input{
- width:100%;
- padding:19px 15px;
- margin:12px 0;
- border:2px solid #27845d;
- border-radius:17px;
- background:#10291f;
- color:white;
- font-size:17px;
- outline:none;
-}
-
-input{direction:ltr;text-align:left}
-input:focus,select:focus{border-color:var(--green);box-shadow:0 0 15px #00ff6650}
-
-button{
- width:100%;
- padding:19px 12px;
- margin-top:15px;
- border:0;
- border-radius:18px;
- background:linear-gradient(100deg,#00a94e,#00ff76,#00bd5b);
- color:#002514;
- font-size:20px;
- font-weight:bold;
- box-shadow:0 0 25px #00ff6650;
- cursor:pointer;
- transition:.3s;
-}
-
-button:active{transform:scale(.97)}
-
-#result{
- margin-top:20px;
- padding:20px 12px;
- border:1px solid #087c48;
- border-radius:16px;
- background:#00120b;
- color:var(--green);
- line-height:1.9;
-}
-
-.features{
- display:grid;
- grid-template-columns:repeat(2,1fr);
- gap:15px;
-}
-
-.feature{
- padding:25px 10px;
- background:#09251a;
- border:1px solid #168b54;
- border-radius:20px;
- font-size:17px;
- transition:.3s;
-}
-
-.feature:hover{
- border-color:var(--green);
- box-shadow:0 0 15px #00ff6650;
-}
-
-.feature b{display:block;font-size:35px;margin-bottom:12px}
-
-.trust{
- display:flex;
- justify-content:space-around;
- flex-wrap:wrap;
- gap:20px;
- padding:30px 5px;
- color:#c3e4d0;
- font-size:15px;
-}
-
-footer{
- margin-top:35px;
- padding:35px 15px;
- border-top:1px solid #087c48;
- color:#9bb6a7;
- line-height:2.5;
- background:#001009;
-}
-
-footer strong{color:var(--green)}
-
-@media(max-width:500px){
- .panel{padding:23px 15px}
- .features{grid-template-columns:repeat(2,1fr)}
- .info{gap:10px}
- .info-card{padding:20px 8px}
-}
+:root{--bg:#050b09;--panel:#0b1712;--panel2:#10231a;--green:#00f58a;--green2:#00b96b;--gold:#d9b86c;--muted:#91a69a;--line:rgba(0,245,138,.22);--white:#f3fff8}
+*{box-sizing:border-box}
+html{scroll-behavior:smooth}
+body{margin:0;background:radial-gradient(ellipse at 50% -15%,#12412b 0,transparent 42%),radial-gradient(circle at 100% 45%,rgba(0,245,138,.07),transparent 28%),var(--bg);color:var(--white);font-family:Tahoma,Arial,sans-serif;min-height:100vh}
+body:before{content:"";position:fixed;inset:0;pointer-events:none;opacity:.14;background-image:linear-gradient(rgba(255,255,255,.025) 1px,transparent 1px),linear-gradient(90deg,rgba(255,255,255,.025) 1px,transparent 1px);background-size:34px 34px;mask-image:linear-gradient(to bottom,black,transparent 85%)}
+a{color:inherit;text-decoration:none}
+.wrap{width:min(1120px,92%);margin:auto;position:relative}
+nav{height:76px;display:flex;align-items:center;justify-content:space-between;border-bottom:1px solid rgba(255,255,255,.07)}
+.brand{display:flex;align-items:center;gap:12px;font-weight:900;letter-spacing:1px}
+.brand-mark{width:43px;height:43px;border:1px solid var(--green);border-radius:14px;display:grid;place-items:center;color:var(--green);font-size:23px;box-shadow:0 0 22px rgba(0,245,138,.16),inset 0 0 15px rgba(0,245,138,.08)}
+.brand small{display:block;color:var(--muted);font-size:10px;letter-spacing:2px;margin-top:4px}
+.nav-right{display:flex;align-items:center;gap:18px;color:#b7c9be;font-size:13px}
+.pill{border:1px solid var(--line);border-radius:30px;padding:9px 14px;color:var(--green);background:rgba(0,245,138,.05)}
+.hero{text-align:center;padding:58px 0 35px}
+.eyebrow{display:inline-flex;align-items:center;gap:8px;border:1px solid var(--line);background:rgba(0,245,138,.055);padding:8px 14px;border-radius:30px;color:#a8f6ce;font-size:12px}
+.dot{width:7px;height:7px;background:var(--green);border-radius:50%;box-shadow:0 0 12px var(--green)}
+h1{font-size:clamp(36px,8vw,68px);margin:22px 0 12px;line-height:1.12;font-weight:950;letter-spacing:-2px}
+h1 span{color:var(--green);text-shadow:0 0 28px rgba(0,245,138,.27)}
+.subtitle{color:#a9bbb0;line-height:2;max-width:650px;margin:0 auto;font-size:14px}
+.hero-line{width:110px;height:2px;background:linear-gradient(90deg,transparent,var(--green),transparent);margin:27px auto}
+.shell{border:1px solid rgba(0,245,138,.25);border-radius:26px;background:linear-gradient(145deg,rgba(13,33,23,.96),rgba(5,14,10,.96));box-shadow:0 20px 80px rgba(0,0,0,.42),0 0 45px rgba(0,245,138,.06);overflow:hidden;position:relative}
+.shell:before{content:"";position:absolute;inset:0 0 auto;height:2px;background:linear-gradient(90deg,transparent,var(--green),var(--gold),transparent)}
+.section-head{display:flex;justify-content:space-between;align-items:center;gap:12px;padding:24px 26px;border-bottom:1px solid rgba(255,255,255,.07)}
+.section-head h2{font-size:18px;margin:0}
+.section-head p{font-size:11px;color:var(--muted);margin:7px 0 0}
+.secure{font-size:11px;color:#b5e9cb;border:1px solid rgba(0,245,138,.18);padding:8px 11px;border-radius:20px;white-space:nowrap}
+.content{padding:25px}
+.grid{display:grid;grid-template-columns:1fr 1fr;gap:16px}
+.choice{cursor:pointer;text-align:right;border:1px solid rgba(255,255,255,.1);border-radius:19px;padding:20px;background:linear-gradient(145deg,rgba(255,255,255,.035),rgba(255,255,255,.012));transition:.25s;position:relative;min-height:145px;color:var(--white)}
+.choice:hover{transform:translateY(-3px);border-color:rgba(0,245,138,.55)}
+.choice.active{border-color:var(--green);background:linear-gradient(145deg,rgba(0,245,138,.13),rgba(0,245,138,.035));box-shadow:inset 0 0 25px rgba(0,245,138,.05),0 0 24px rgba(0,245,138,.09)}
+.choice .icon{font-size:30px;margin-bottom:12px;display:block}
+.choice strong{font-size:16px;display:block;margin-bottom:7px}
+.choice small{color:var(--muted);line-height:1.8;font-size:11px}
+.radio{position:absolute;left:18px;top:20px;width:18px;height:18px;border:1px solid #71877a;border-radius:50%}
+.choice.active .radio{border:5px solid var(--green);box-shadow:0 0 12px rgba(0,245,138,.5)}
+.field-row{display:grid;grid-template-columns:1fr 1fr;gap:14px;margin-top:22px}
+.field label{display:block;font-size:12px;color:#c2d5c9;margin:0 0 9px}
+select,input{width:100%;border:1px solid rgba(255,255,255,.13);border-radius:13px;background:#07120d;color:var(--white);padding:15px 14px;font:inherit;font-size:13px;outline:none}
+select:focus,input:focus{border-color:var(--green);box-shadow:0 0 0 3px rgba(0,245,138,.08)}
+select option{background:#07120d}
+.hint{font-size:10px;color:#82988a;line-height:1.9;margin-top:8px}
+.cta{width:100%;border:0;border-radius:14px;padding:16px;margin-top:22px;background:linear-gradient(100deg,#00c875,#00f58a);color:#03150c;font-weight:900;font-size:15px;cursor:pointer;box-shadow:0 8px 30px rgba(0,245,138,.17);transition:.2s}
+.cta:hover{filter:brightness(1.08);transform:translateY(-1px)}
+.notice{display:none;margin-top:16px;padding:15px;border-radius:13px;border:1px solid rgba(217,184,108,.35);background:rgba(217,184,108,.07);color:#ead9b2;font-size:12px;line-height:2}
+.notice.show{display:block}
+.features{padding:55px 0}
+.center{text-align:center}
+.center h2{font-size:25px;margin:0 0 10px}
+.center p{color:var(--muted);font-size:12px;line-height:1.9}
+.feature-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:14px;margin-top:25px}
+.feature{border:1px solid rgba(255,255,255,.08);border-radius:17px;padding:20px;background:rgba(12,26,19,.65)}
+.feature b{display:block;margin:10px 0 7px;font-size:14px}
+.feature p{margin:0;color:var(--muted);font-size:11px;line-height:1.9}
+.feature .ficon{font-size:24px;color:var(--green)}
+footer{border-top:1px solid rgba(255,255,255,.07);padding:22px 0 30px;text-align:center;color:#789083;font-size:11px;line-height:2}
+footer strong{color:var(--green);letter-spacing:1px}
+@media(max-width:650px){nav{height:66px}.nav-right .hide{display:none}.hero{padding:42px 0 28px}.content{padding:17px}.section-head{padding:19px 17px}.grid,.field-row{grid-template-columns:1fr}.choice{min-height:120px}.feature-grid{grid-template-columns:1fr}.features{padding:42px 0}.secure{font-size:9px}.section-head h2{font-size:15px}}
 </style>
 </head>
-
 <body>
+<div class="wrap">
+<nav>
+  <div class="brand"><div class="brand-mark">♛</div><div>FAISAL MD<small>SMART AUTOMATION PANEL</small></div></div>
+  <div class="nav-right"><span class="hide">پنل هوشمند مدیریت</span><span class="pill">● سیستم آنلاینِ نمایشی</span></div>
+</nav>
 
-<header>
- <div class="flag">🇦🇫</div>
- <h1>FAISAL <span>MD</span></h1>
- <div class="subtitle">WhatsApp Multi Device Bot</div>
- <div class="power">👑 Power By Faisal 👑</div>
+<header class="hero">
+  <div class="eyebrow"><i class="dot"></i> نسل جدید مدیریت واتساپ</div>
+  <h1>FAISAL <span>MD</span></h1>
+  <p class="subtitle">یک پنل مدرن برای مدیریت و راه‌اندازی ابزارهای واتساپ؛ با رابط کاربری یکپارچه، طراحی حرفه‌ای و تمرکز بر امنیت حساب شما.</p>
+  <div class="hero-line"></div>
 </header>
 
-<main class="container">
-
-<section class="hero">
- <div class="hero-icon">🦁</div>
- <h2>FAISAL MD OFFICIAL</h2>
- <p>به پنل رسمی فیصل خوش آمدید</p>
- <p>قدرت، سرعت و تکنالوژی در یک جا</p>
- <div class="power">🇦🇫 افغانستان تا همیشه سبز 🇦🇫</div>
-</section>
-
-<section class="panel">
- <h2>🖥️ انتخاب سرور | Select Server</h2>
- <div class="info">
-  <div class="info-card">
-   <div class="emoji">🟢</div>
-   <h3>وضعیت سرور</h3>
-   <p>نمایش وضعیت اتصال</p>
+<main class="shell">
+  <div class="section-head">
+    <div><h2>راه‌اندازی حساب واتساپ</h2><p>نوع حساب خود را انتخاب کنید و راهنمای مناسب را ببینید</p></div>
+    <div class="secure">♧ حریم خصوصی مهم است</div>
   </div>
-  <div class="info-card">
-   <div class="emoji">👥</div>
-   <h3>ظرفیت سرور</h3>
-   <p>30 کاربر</p>
+  <div class="content">
+    <div class="grid" role="group" aria-label="نوع واتساپ">
+      <button class="choice active" type="button" data-type="business" aria-pressed="true">
+        <span class="radio"></span><span class="icon">▣</span><strong>WhatsApp Business</strong><small>برای کسب‌وکارها و ارتباط با مشتریان</small>
+      </button>
+      <button class="choice" type="button" data-type="personal" aria-pressed="false">
+        <span class="radio"></span><span class="icon">◉</span><strong>WhatsApp Messenger</strong><small>برای حساب شخصی؛ امکانات رسمی محدودتر است</small>
+      </button>
+    </div>
+
+    <div class="field-row">
+      <div class="field">
+        <label for="region">کشور / پیش‌شماره</label>
+        <select id="region">
+          <option value="+93">🇦🇫 افغانستان (+93)</option>
+          <option value="+1">🇺🇸 آمریکا (+1)</option>
+          <option value="+44">🇬🇧 بریتانیا (+44)</option>
+          <option value="+92">🇵🇰 پاکستان (+92)</option>
+          <option value="+971">🇦🇪 امارات (+971)</option>
+          <option value="+49">🇩🇪 آلمان (+49)</option>
+        </select>
+      </div>
+      <div class="field">
+        <label for="method">روش راه‌اندازی</label>
+        <select id="method">
+          <option value="official">روش رسمی و پشتیبانی‌شده</option>
+          <option value="guide">مشاهده راهنمای اتصال امن</option>
+        </select>
+      </div>
+    </div>
+    <div class="hint">در این نسخه شماره تلفن دریافت یا ذخیره نمی‌شود. هیچ رمز، کد پیامکی، کد دو مرحله‌ای یا QR خصوصی را در اختیار کسی قرار ندهید.</div>
+    <button class="cta" id="start">مشاهده مراحل راه‌اندازی ←</button>
+    <div class="notice" id="notice" role="status"></div>
   </div>
- </div>
-
- <select id="server">
-  <option value="">انتخاب سرور</option>
-  <option value="server01">Server 01</option>
-  <option value="server02">Server 02</option>
-  <option value="server03">Server 03</option>
- </select>
-</section>
-
-<section class="panel">
- <h2>⚡ Quick Setup | راه‌اندازی سریع</h2>
- <div style="font-size:65px;margin:20px">🚀</div>
- <p style="line-height:2;color:#c7dfd2">
-  به پنل FAISAL MD خوش آمدید.
-  <br>
-  سرور مورد نظر خود را انتخاب نمایید.
- </p>
-</section>
-
-<section class="panel">
- <h2>📱 WhatsApp Number</h2>
- <input id="number" type="tel"
- placeholder="Enter number with country code"
- autocomplete="off">
-
- <p style="color:#a9c7b7;font-size:13px;line-height:2">
- شماره را همراه کود کشور وارد کنید.
- </p>
-
- <button onclick="connect()">
-  🔑 نمایش وضعیت اتصال
- </button>
-
- <div id="result">
-  وضعیت اتصال شما اینجا نمایش داده می‌شود.
- </div>
-</section>
-
-<section class="panel">
- <h2>👑 امکانات FAISAL MD</h2>
-
- <div class="features">
-  <div class="feature">
-   <b>🤖</b>
-   پاسخ‌گویی خودکار
-  </div>
-  <div class="feature">
-   <b>🎵</b>
-   ابزارهای رسانه‌ای
-  </div>
-  <div class="feature">
-   <b>🧠</b>
-   دستیار هوش مصنوعی
-  </div>
-  <div class="feature">
-   <b>👥</b>
-   مدیریت گروه
-  </div>
-  <div class="feature">
-   <b>📊</b>
-   پنل مدیریت
-  </div>
-  <div class="feature">
-   <b>⚙️</b>
-   تنظیمات ربات
-  </div>
- </div>
-</section>
-
-<div class="trust">
- <span>🛡️ امن</span>
- <span>⚡ سریع</span>
- <span>💎 قابل اعتماد</span>
- <span>🌐 آنلاین</span>
-</div>
-
 </main>
 
-<footer>
- 🇦🇫 ساخته شده با ❤️ توسط فیصل
- <br>
- <strong>FAISAL MD</strong>
- <br>
- © 2026 All Rights Reserved
-</footer>
-
+<section class="features">
+  <div class="center"><h2>امکانات پنل</h2><p>نمایش بخش‌های اصلی محصول؛ فعال‌سازی قابلیت‌ها پس از اتصال بک‌اند امن انجام می‌شود.</p></div>
+  <div class="feature-grid">
+    <article class="feature"><div class="ficon">✧</div><b>پاسخ‌گوی خودکار</b><p>آماده‌سازی پاسخ‌های از پیش تعریف‌شده برای پیام‌های ورودی.</p></article>
+    <article class="feature"><div class="ficon">⌘</div><b>مدیریت پیام‌ها</b><p>ساختاردهی ابزارهای مدیریت گفتگو و تنظیمات حساب.</p></article>
+    <article class="feature"><div class="ficon">◈</div><b>دستیار هوشمند</b><p>جایگاه اتصال دستیار هوش مصنوعی در نسخه کامل.</p></article>
+    <article class="feature"><div class="ficon">♧</div><b>امنیت و حریم خصوصی</b><p>طراحی با حداقل‌سازی اطلاعات دریافتی و دسترسی‌های لازم.</p></article>
+    <article class="feature"><div class="ficon">▤</div><b>داشبورد کاربری</b><p>نمایش وضعیت و تنظیمات هر کاربر پس از پیاده‌سازی سرور.</p></article>
+    <article class="feature"><div class="ficon">⚙</div><b>تنظیمات پیشرفته</b><p>محل تنظیم قابلیت‌ها و اتصال سرویس‌های موردنیاز.</p></article>
+  </div>
+</section>
+<footer><strong>FAISAL MD</strong><br>POWERED BY FAISAL · رابط کاربری نسخهٔ اولیه<br>اتصال واقعی نیازمند بک‌اند امن و مجوزها و APIهای پشتیبانی‌شده است.</footer>
+</div>
 <script>
-function connect(){
- const server=document.getElementById("server").value;
- const number=document.getElementById("number").value.trim();
- const result=document.getElementById("result");
-
- if(!server || !number){
-  result.textContent="لطفاً سرور و شماره را وارد کنید.";
-  return;
- }
-
- result.textContent=
- "این نسخه نمایشی است. برای اتصال واقعی، بک‌اند امن لازم است.";
-}
+const choices=[...document.querySelectorAll('.choice')];
+let selected='business';
+choices.forEach(btn=>btn.addEventListener('click',()=>{
+  selected=btn.dataset.type;
+  choices.forEach(item=>{const active=item===btn;item.classList.toggle('active',active);item.setAttribute('aria-pressed',String(active));});
+}));
+document.getElementById('start').addEventListener('click',()=>{
+  const region=document.getElementById('region').value;
+  const method=document.getElementById('method').value;
+  const box=document.getElementById('notice');
+  box.classList.add('show');
+  if(selected==='business' && method==='official'){
+    box.textContent='حساب انتخاب‌شده: WhatsApp Business. برای اتصال واقعی باید حساب کسب‌وکار از مسیر رسمی WhatsApp Business Platform و تنظیمات سرور امن راه‌اندازی شود. پیش‌شماره انتخاب‌شده: '+region+'. این صفحه فعلاً فقط رابط کاربری است و هیچ اتصالی برقرار نکرده است.';
+  }else if(selected==='personal'){
+    box.textContent='حساب انتخاب‌شده: WhatsApp Messenger. اتصال حساب شخصی از طریق این پنل در حال حاضر فعال نیست؛ API رسمی کسب‌وکار برای حساب شخصی جایگزین مستقیم ندارد. برای حفظ امنیت، QR یا کد ورود خود را به هیچ وب‌سایت ناشناس ندهید.';
+  }else{
+    box.textContent='راهنمای امن انتخاب شد. این نسخه نمایشی است؛ پیش از فعال‌سازی اتصال واقعی باید روش مجاز، بک‌اند امن و سیاست نگهداری داده‌ها مشخص شود. هیچ کد تأیید یا اطلاعات محرمانه‌ای در این صفحه وارد نکنید.';
+  }
+  box.scrollIntoView({behavior:'smooth',block:'nearest'});
+});
 </script>
-
 </body>
 </html>
