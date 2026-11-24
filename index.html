@@ -1,104 +1,53 @@
-
 <!DOCTYPE html>
-<html lang="fa">
+<html lang="fa" dir="rtl">
 <head>
-<meta charset="UTF-8">
-<meta name="viewport" content="width=device-width, initial-scale=1">
-<title>FAISAL MD</title>
+<meta charset="UTF-8"><meta name="viewport" content="width=device-width, initial-scale=1">
+<meta name="theme-color" content="#03110d"><title>FAISAL MD</title>
 <style>
-*{box-sizing:border-box}
-body{
- margin:0;background:#03120e;color:white;
- font-family:Arial,sans-serif;text-align:center;
-}
-header{padding:30px 15px 20px;
- background:linear-gradient(135deg,#001b12,#063c25,#00110c);
- border-bottom:2px solid #00ff75}
-.flag{font-size:45px}
-h1{font-size:39px;margin:12px 0;color:#00ff72;
- text-shadow:0 0 18px #00ff72}
-.sub{color:#b7d8c8}
-.panel{
- max-width:550px;margin:22px auto;padding:22px;
- background:#0b211b;border:1px solid #087c48;
- border-radius:22px;box-shadow:0 0 20px #00ff7220;
-}
-h2{color:#00ff72}
-select,input{
- width:100%;padding:17px;margin:10px 0;
- border-radius:12px;border:1px solid #33765a;
- background:#142a23;color:white;font-size:17px;
-}
-button{
- width:100%;padding:17px;border:0;border-radius:13px;
- background:linear-gradient(90deg,#00a94f,#00ff76);
- color:#002b15;font-size:18px;font-weight:bold;
- cursor:pointer;margin-top:15px;
-}
-#result{margin-top:20px;padding:18px;
- background:#07140f;border-radius:12px;color:#00ff72}
-footer{padding:25px;color:#8ba99a;font-size:13px}
-</style>
-</head>
+:root{--g:#00ff68;--bg:#020b08}*{box-sizing:border-box}
+body{margin:0;color:#fff;text-align:center;font-family:Tahoma,Arial,sans-serif;background:radial-gradient(ellipse at 50% 0%,#07512c,transparent 44%),#020b08}
+.hero{padding:35px 16px 26px;background:linear-gradient(135deg,#00150d,#064225,#00130b);border-bottom:2px solid var(--g)}
+.flag{font-size:58px}h1{direction:ltr;font-size:clamp(38px,9vw,66px);letter-spacing:2px;margin:8px 0;text-shadow:0 0 8px var(--g),0 0 24px var(--g)}
+h1 span,h2{color:var(--g)}.subtitle{direction:ltr;font-size:clamp(16px,4vw,22px);color:#d2e8dc}.power{font-size:20px;color:#ffe94d;margin-top:16px}
+main{width:min(920px,94%);margin:24px auto}.panel{margin:20px auto;padding:24px 20px;background:linear-gradient(145deg,#072619,#02110c);border:1px solid #00c85a;border-radius:24px;box-shadow:0 0 12px #00ff6840,inset 0 0 24px #00ff6810}
+h2{font-size:clamp(22px,5vw,30px);margin:4px 0 22px}
+.server-row{display:grid;grid-template-columns:1fr 1fr;gap:14px;align-items:center}.server-info{font-size:16px;color:#d9eee2}
+select,input{width:100%;padding:17px 16px;margin:8px 0;border-radius:15px;border:1px solid #398765;background:#10271e;color:#fff;font-size:17px;outline:none}
+input{direction:ltr;text-align:left}select:focus,input:focus{border-color:var(--g);box-shadow:0 0 0 3px #00ff6820}
+button{width:100%;padding:18px;border:0;border-radius:16px;margin-top:14px;background:linear-gradient(90deg,#00a94e,#00ff70);color:#002512;font-size:20px;font-weight:bold}
+.quick{display:flex;gap:18px;align-items:center;text-align:right}.rocket{font-size:48px}.quick p{line-height:1.9;color:#d6e7dd}
+.hint{font-size:13px;color:#a9c3b5}#result{margin-top:18px;padding:18px;border:1px solid #00b84f;border-radius:14px;background:#020f0a;color:var(--g);line-height:1.8}
+.features{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:12px}.feature{padding:15px 10px;border:1px solid #176d43;border-radius:14px;background:#09251a}.feature b{display:block;font-size:25px;margin-bottom:7px}
+.trust{display:flex;justify-content:center;gap:20px;flex-wrap:wrap;color:#d9eee2;padding:20px 8px}footer{padding:25px 12px 35px;color:#9db6a8;line-height:2;border-top:1px solid #0b5c35}
+@media(max-width:560px){.panel{padding:22px 15px}.server-row{grid-template-columns:1fr}.quick{display:block;text-align:center}.features{grid-template-columns:1fr 1fr}}
+</style></head>
 <body>
-<header>
-<div class="flag">🇦🇫</div>
-<h1>FAISAL MD</h1>
-<div class="sub">WhatsApp Multi Device Bot</div>
-<p>👑 Power By Faisal 👑</p>
-</header>
-
-<div class="panel">
-<h2>🖥 Select Server</h2>
-<select id="server">
-<option value="">Select Server</option>
-<option>Server 01</option>
-<option>Server 02</option>
-<option>Server 03</option>
-</select>
-</div>
-
-<div class="panel">
-<h2>⚡ Quick Setup</h2>
-<p class="sub">Welcome to FAISAL MD Bot</p>
-<p>Connect your WhatsApp using a secure supported method.</p>
-</div>
-
-<div class="panel">
-<h2>📱 WhatsApp Number</h2>
-<input id="number" type="tel"
-placeholder="Enter number with country code">
-<button onclick="connect()">Generate Pair Code</button>
-<div id="result">Your connection status will appear here</div>
-</div>
-
-<div class="panel">
-<h2>👑 FAISAL MD FEATURES</h2>
-<p>🤖 Auto Reply</p>
-<p>🎵 Media Tools</p>
-<p>🧠 AI Assistant</p>
-<p>👥 Group Management</p>
-<p>⚙️ Bot Settings</p>
-</div>
-
-<footer>
-🇦🇫 Made With Love By Faisal
-<br><br>© 2026 FAISAL MD
-</footer>
-
+<header class="hero"><div class="flag">🇦🇫</div><h1>FAISAL <span>MD</span></h1>
+<div class="subtitle">WhatsApp Multi Device Bot</div><div class="power">👑 Power By Faisal 👑</div></header>
+<main>
+<section class="panel"><h2>🖥️ انتخاب سرور | Select Server</h2><div class="server-row">
+<div class="server-info">🟢 وضعیت نمایشی: فعال<br>👥 ظرفیت نمایشی: 30</div>
+<select id="server" aria-label="انتخاب سرور"><option value="">انتخاب سرور</option><option value="Server 01">Server 01</option><option value="Server 02">Server 02</option><option value="Server 03">Server 03</option></select></div></section>
+<section class="panel"><h2>⚡ راه‌اندازی سریع | Quick Setup</h2><div class="quick"><div class="rocket">🚀</div><div>
+<p>به پنل FAISAL MD خوش آمدید.</p><p>سرور را انتخاب کنید و برای دیدن پیش‌نمایش، شماره واتساپ خود را وارد نمایید.</p></div></div></section>
+<section class="panel"><h2>📱 شماره واتساپ | WhatsApp Number</h2>
+<input id="number" type="tel" inputmode="tel" autocomplete="tel" placeholder="مثال: 937XXXXXXXX" aria-label="شماره واتساپ با کود کشور">
+<p class="hint">شماره را همراه کود کشور وارد کنید؛ این نسخه فقط نمایشی است.</p>
+<button type="button" onclick="connect()">🔑 نمایش وضعیت اتصال</button>
+<div id="result" role="status" aria-live="polite">🛡️ وضعیت اتصال نمایشی در این قسمت نشان داده می‌شود.</div></section>
+<section class="panel"><h2>👑 امکانات FAISAL MD</h2><div class="features">
+<div class="feature"><b>🤖</b>پاسخ‌گوی خودکار</div><div class="feature"><b>🎵</b>ابزارهای رسانه‌ای</div>
+<div class="feature"><b>🧠</b>دستیار هوش مصنوعی</div><div class="feature"><b>👥</b>مدیریت گروه</div>
+<div class="feature"><b>⚙️</b>تنظیمات ربات</div><div class="feature"><b>📊</b>پنل مدیریت</div></div></section>
+<div class="trust"><span>🛡️ امن</span><span>⚡ سریع</span><span>💎 قابل اعتماد</span><span>🌐 آنلاین</span></div>
+</main><footer>🇦🇫 ساخته‌شده با ❤️ توسط فیصل<br>© 2026 FAISAL MD — Demo Interface</footer>
 <script>
 function connect(){
  const server=document.getElementById('server').value;
  const number=document.getElementById('number').value.trim();
  const result=document.getElementById('result');
-
- if(!server || !number){
- result.textContent="Please select a server and enter your number.";
- return;
- }
- result.textContent=
- "Demo interface only. A secure backend connection is not configured yet.";
+ if(!server||!number){result.textContent='لطفاً اول سرور را انتخاب کنید و شماره را وارد نمایید.';return;}
+ if(!/^[0-9+\\s()-]{7,20}$/.test(number)){result.textContent='فرمت شماره درست نیست؛ کود کشور را هم وارد کنید.';return;}
+ result.textContent='✅ درخواست نمایشی ثبت شد. برای ساخت Pair Code واقعی، بک‌اند امن و رسمی باید جداگانه تنظیم شود؛ این صفحه به واتساپ وصل نیست.';
 }
-</script>
-</body>
-</html>
+</script></body></html>
